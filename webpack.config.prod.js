@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './src/index.js',
     devtool: 'inline-source-map',
     devServer: {
@@ -29,15 +29,15 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                // use: [{
-                //     loader: MiniCssExtractPlugin.loader,
-                //     options: {
-                //         publicPath: '../',
-                //         hmr: process.env.NODE_ENV === 'development',
-                //     }
-                // },
-                // "css-loader"]
-                use: ["style-loader", "css-loader"]
+                use: [{
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        publicPath: '../',
+                        hmr: process.env.NODE_ENV === 'development',
+                    }
+                },
+                "css-loader"]
+                // use: ["style-loader", "css-loader"]
             },
         ]
     },
