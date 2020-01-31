@@ -6,6 +6,9 @@ module.exports = {
     mode: 'development',
     entry: './src/index.js',
     devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './dist'
+    },
     output: {
         filename: '[name].[contenthash].js'
     },
@@ -16,17 +19,11 @@ module.exports = {
         })
     ],
     module: {
-        rules: [{
-            test: /\.css$/,
-            use: [
-               'style-loader',
-               'css-loader'
-            ]
-        }]
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+            },
+        ]
     },
-    devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        compress: true,
-        port: 8080
-    }
 };
