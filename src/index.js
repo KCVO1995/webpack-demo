@@ -1,4 +1,4 @@
 import x from './x.js'
-import './style.css'
+import './style.scss'
 console.log(x)
 console.log('hi')
