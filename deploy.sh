@@ -1,7 +1,7 @@
 yarn build &&
 git checkout gh-pages &&
 mv dist/* ./ &&
-sudo git add . &&
-sudo git commit -m 'update' &&
-sudo git push &&
-sudo git checkout -
+git add . &&
+git commit -m 'update' &&
+git push &&
+git checkout -
