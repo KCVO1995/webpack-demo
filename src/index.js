@@ -1,7 +1,11 @@
 import x from './x.js'
 import './style.scss'
 import './y.less'
-import './k.stylus'
+import './k.styl'
+import png from './assets/good.png'
 
-console.log(x)
-console.log('hi')
+const div = document.querySelectorAll('div')[0]
+
+div.innerHTML = `
+<img src = png>
+`
